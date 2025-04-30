@@ -2,179 +2,87 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Biswa Ranjan Tudu - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
-      color: #333;
-    }
-
-    .header {
-      background: linear-gradient(135deg, #007b8f, #00c9a7);
-      color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-    }
-
-    .header h1 {
-      font-size: 2.5rem;
-    }
-
-    .header p {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-    }
-
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 2rem;
-      gap: 2rem;
-    }
-
-    .left, .right {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      padding: 2rem;
-      flex: 1;
-      min-width: 320px;
-      transition: transform 0.3s ease;
-    }
-
-    .left:hover, .right:hover {
-      transform: translateY(-5px);
-    }
-
-    h2 {
-      color: #007b8f;
-      margin-bottom: 1rem;
-      border-left: 5px solid #00c9a7;
-      padding-left: 1rem;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      line-height: 1.8;
-    }
-
-    ul li {
-      margin-bottom: 0.5rem;
-      padding-left: 1rem;
-      position: relative;
-    }
-
-    ul li::before {
-      content: '✔';
-      position: absolute;
-      left: 0;
-      color: #00c9a7;
-      font-weight: bold;
-    }
-
-    p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="header">
-    <h1>Biswa Ranjan Tudu</h1>
-    <p>Web Designer | IT Specialist | Programmer</p>
-    <p>📍 Bhadrak, Odisha, India | 📞 +91 8455930482 | ✉️ biswaranjantudu0@gmail.com | 🌐 Portfolio</p>
+  <div class="navbar">
+    <div class="logo">Biswa<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </div>
 
-  <div class="container">
-    <div class="left">
-      <h2>Profile Summary</h2>
-      <p>I am a passionate Web Designer and IT Specialist with strong expertise in front-end and back-end development. I bring creative, responsive, and user-friendly websites to life using modern design principles and technologies. I have experience in programming, IT solutions, and continuously upgrade my skills to align with industry trends.</p>
-
-      <h2>Skills</h2>
-      <ul>
-        <li>Website Design and Development (HTML, CSS, JavaScript)</li>
-        <li>UI/UX Design Principles</li>
-        <li>Responsive and Mobile-First Design</li>
-        <li>Programming: Python, Java, C++</li>
-        <li>Version Control: Git, GitHub</li>
-        <li>Problem Solving and Critical Thinking</li>
-        <li>Communication and Team Collaboration</li>
-      </ul>
-
-      <h2>Personal Attributes</h2>
-      <ul>
-        <li>Creative and detail-oriented</li>
-        <li>Fast learner and tech enthusiast</li>
-        <li>Committed to continuous self-improvement</li>
-        <li>Focused on delivering quality results on time</li>
-      </ul>
-
-      <h2>Languages</h2>
-      <ul>
-        <li>English</li>
-        <li>Hindi</li>
-        <li>Odia</li>
-      </ul>
+  <section id="home" class="section">
+    <div class="content">
+      <h1 class="animate-text">Hi, I'm <span>Biswa Ranjan Tudu</span></h1>
+      <p class="animate-text">Web Designer | IT Specialist | Programmer</p>
     </div>
+  </section>
 
-    <div class="right">
-      <h2>Work Experience</h2>
-      <ul>
-        <li><strong>Freelance Web Designer</strong> (2023 – Present)
-          <ul>
-            <li>Designed responsive websites across various industries</li>
-            <li>Improved load times and mobile responsiveness by 30%</li>
-            <li>Integrated modern UI/UX trends</li>
-          </ul>
-        </li>
-        <li><strong>Intern - Web Development, ABC Tech Solutions</strong> (2022 – 2023)
-          <ul>
-            <li>Built responsive layouts using HTML, CSS, JS</li>
-            <li>Collaborated on real-world client projects</li>
-          </ul>
-        </li>
-        <li><strong>Junior IT Support Technician, IT World Services</strong> (2021 – 2022)
-          <ul>
-            <li>Provided support for software, hardware, and networks</li>
-            <li>Maintained internal websites and improved ticket responses</li>
-          </ul>
-        </li>
-      </ul>
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I am a passionate Web Designer and IT Specialist with strong expertise in front-end and back-end development. I bring creative, responsive, and user-friendly websites to life using modern design principles and technologies. I have experience in programming, IT solutions, and continuously upgrade my skills to align with industry trends.</p>
+  </section>
 
-      <h2>Education</h2>
-      <ul>
-        <li><strong>Coage Icom, OAV Palasagadia</strong>
-          <ul>
-            <li>Studied IT and Web Design fundamentals</li>
-            <li>Hands-on with software tools and coding basics</li>
-          </ul>
-        </li>
-        <li><strong>OS-CIT, PCA Bont</strong>
-          <ul>
-            <li>Focused on Computer Applications and IT skills</li>
-            <li>Proficient in MS Office and basic programming</li>
-          </ul>
-        </li>
-      </ul>
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skill-list">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Python</div>
+      <div class="skill">Java</div>
+      <div class="skill">C++</div>
+      <div class="skill">UI/UX</div>
+      <div class="skill">Git & GitHub</div>
     </div>
-  </div>
+  </section>
+
+  <section id="experience" class="section">
+    <h2>Experience</h2>
+    <div class="experience">
+      <h3>Freelance Web Designer (2023 – Present)</h3>
+      <p>Designed responsive websites, improved performance and user experience.</p>
+
+      <h3>Intern - Web Development, ABC Tech Solutions (2022 – 2023)</h3>
+      <p>Developed responsive layouts, collaborated on real-world projects.</p>
+
+      <h3>Junior IT Support Technician, IT World Services (2021 – 2022)</h3>
+      <p>Handled tech support, internal website maintenance, and optimized systems.</p>
+    </div>
+  </section>
+
+  <section id="education" class="section">
+    <h2>Education</h2>
+    <div class="education">
+      <h3>Coage Icom, OAV Palasagadia</h3>
+      <p>Studied foundational IT and web design concepts.</p>
+
+      <h3>OS-CIT, PCA Bont</h3>
+      <p>Focused on computer applications, programming, and IT skills.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>📍 Bhadrak, Odisha, India</p>
+    <p>📞 +91 8455930482</p>
+    <p>✉️ biswaranjantudu0@gmail.com</p>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
+
 
