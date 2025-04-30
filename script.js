@@ -1,43 +1,49 @@
-// Scroll reveal animations
-const sections = document.querySelectorAll('.section');
+// Home canvas animation (simple bouncing ball or icon)
+const canvas = document.getElementById('home-icon');
+const ctx = canvas.getContext('2d');
 
-const revealOnScroll = () => {
-  const triggerBottom = window.innerHeight * 0.85;
+let x = 50, y = 50;
+let dx = 2, dy = 2;
+const radius = 20;
 
-  sections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
+function drawIcon() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    if (sectionTop < triggerBottom) {
-      section.classList.add('visible');
+  // Circle icon
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, Math.PI * 2);
+  ctx.fillStyle = '#ff9800';
+  ctx.fill();
+  ctx.closePath();
+
+  // Animate
+  if (x + radius > canvas.width || x - radius < 0) dx = -dx;
+  if (y + radius > canvas.height || y - radius < 0) dy = -dy;
+  x += dx;
+  y += dy;
+
+  requestAnimationFrame(drawIcon);
+}
+
+drawIcon();
+
+// Smooth scroll for navbar links
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
     }
   });
-};
-
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
-
-// Smooth text animation trigger
-const animatedTexts = document.querySelectorAll('.animate-text');
-animatedTexts.forEach((el, i) => {
-  el.style.animationDelay = `${i * 0.3}s`;
 });
 
-// Navigation active link on scroll
-const navLinks = document.querySelectorAll('.nav-links a');
+// Optional: Add sound effect when skill tag is clicked
+// Create Audio
+const clickSound = new Audio('sound.mp3'); // Add sound.mp3 to your directory
 
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    if (pageYOffset >= sectionTop) {
-      current = section.getAttribute('id');
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('active');
-    }
+document.querySelectorAll('.skill').forEach(skill => {
+  skill.addEventListener('click', () => {
+    clickSound.play().catch(() => {}); // Ignore errors if autoplay is blocked
   });
 });
