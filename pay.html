@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Plan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white p-6 rounded-2xl shadow-lg w-80">
+    <h2 class="text-xl font-bold text-center">CHOOSE YOUR PLAN</h2>
+    <p class="text-center text-gray-500 text-sm mb-4">
+      Start with <span class="text-red-500">14 days free trial</span>. Upgrade or downgrade anytime
+    </p>
+    <div class="bg-blue-600 text-white rounded-xl p-4 relative">
+      <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+        <span class="bg-yellow-400 rounded-full p-2">👑</span>
+      </div>
+      <div class="text-center mt-4">
+        <p class="text-sm">PREMIUM</p>
+        <p class="text-3xl font-bold">$160 <span class="text-sm font-normal">/ Mon</span></p>
+      </div>
+      <ul class="mt-4 text-sm">
+        <li class="flex justify-between border-b border-blue-500 py-1">120 GB SSD Disk ✅</li>
+        <li class="flex justify-between border-b border-blue-500 py-1">100 GB Bandwidth ✅</li>
+        <li class="flex justify-between border-b border-blue-500 py-1">250 Emails ✅</li>
+        <li class="flex justify-between border-b border-blue-500 py-1">Unlimited FTP ✅</li>
+        <li class="flex justify-between border-b border-blue-500 py-1">5 Websites ✅</li>
+        <li class="flex justify-between border-b border-blue-500 py-1">CPanel ✅</li>
+        <li class="flex justify-between py-1">SSL Certificate ✅</li>
+      </ul>
+      <button id="payBtn" class="mt-4 bg-white text-blue-700 w-full py-2 rounded-lg font-semibold">
+        Get Started
+      </button>
+    </div>
+  </div>
+
+  <!-- Razorpay JS -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    const payBtn = document.getElementById("payBtn");
+    payBtn.onclick = function () {
+      const options = {
+        key: "YOUR_RAZORPAY_KEY_ID", // Replace with your Razorpay Key
+        amount: 16000, // 160 USD in paise (160 * 100)
+        currency: "USD",
+        name: "Your Company",
+        description: "Premium Subscription",
+        handler: function (response) {
+          alert("Payment successful. ID: " + response.razorpay_payment_id);
+        },
+        prefill: {
+          name: "Customer Name",
+          email: "customer@example.com"
+        },
+        theme: {
+          color: "#4F46E5"
+        }
+      };
+      const rzp1 = new Razorpay(options);
+      rzp1.open();
+    };
+  </script>
+
+</body>
+</html>
