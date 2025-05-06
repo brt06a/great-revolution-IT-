@@ -2,66 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Premium Plan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premium Plans</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<body class="bg-gray-100 font-sans">
 
-  <div class="bg-white p-6 rounded-2xl shadow-lg w-80">
-    <h2 class="text-xl font-bold text-center">CHOOSE YOUR PLAN</h2>
-    <p class="text-center text-gray-500 text-sm mb-4">
-      Start with <span class="text-red-500">14 days free trial</span>. Upgrade or downgrade anytime
-    </p>
-    <div class="bg-blue-600 text-white rounded-xl p-4 relative">
-      <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
-        <span class="bg-yellow-400 rounded-full p-2">👑</span>
-      </div>
-      <div class="text-center mt-4">
-        <p class="text-sm">PREMIUM</p>
-        <p class="text-3xl font-bold">$160 <span class="text-sm font-normal">/ Mon</span></p>
-      </div>
-      <ul class="mt-4 text-sm">
-        <li class="flex justify-between border-b border-blue-500 py-1">120 GB SSD Disk ✅</li>
-        <li class="flex justify-between border-b border-blue-500 py-1">100 GB Bandwidth ✅</li>
-        <li class="flex justify-between border-b border-blue-500 py-1">250 Emails ✅</li>
-        <li class="flex justify-between border-b border-blue-500 py-1">Unlimited FTP ✅</li>
-        <li class="flex justify-between border-b border-blue-500 py-1">5 Websites ✅</li>
-        <li class="flex justify-between border-b border-blue-500 py-1">CPanel ✅</li>
-        <li class="flex justify-between py-1">SSL Certificate ✅</li>
-      </ul>
-      <button id="payBtn" class="mt-4 bg-white text-blue-700 w-full py-2 rounded-lg font-semibold">
-        Get Started
+  <!-- Top Navigation Bar -->
+  <div class="flex justify-between items-center p-4 bg-white shadow-md">
+    <h1 class="text-xl font-bold">Premium Plans</h1>
+    <div class="flex items-center space-x-4">
+      <button>
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405M19 13V6a2 2 0 00-2-2H5a2 2 0 00-2 2v13a2 2 0 002 2h11l4-4z"></path></svg>
       </button>
+      <img src="https://i.pravatar.cc/30" alt="Avatar" class="rounded-full w-8 h-8">
     </div>
   </div>
 
-  <!-- Razorpay JS -->
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  <script>
-    const payBtn = document.getElementById("payBtn");
-    payBtn.onclick = function () {
-      const options = {
-        key: "YOUR_RAZORPAY_KEY_ID", // Replace with your Razorpay Key
-        amount: 16000, // 160 USD in paise (160 * 100)
-        currency: "USD",
-        name: "Your Company",
-        description: "Premium Subscription",
-        handler: function (response) {
-          alert("Payment successful. ID: " + response.razorpay_payment_id);
-        },
-        prefill: {
-          name: "Customer Name",
-          email: "customer@example.com"
-        },
-        theme: {
-          color: "#4F46E5"
-        }
-      };
-      const rzp1 = new Razorpay(options);
-      rzp1.open();
-    };
-  </script>
+  <!-- Swiper Container -->
+  <div class="swiper mySwiper mt-4">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide flex justify-center">
+        <div class="w-80 bg-yellow-300 rounded-2xl p-6 text-white shadow-lg">
+          <h2 class="text-2xl font-bold text-center">Bronze Plan</h2>
+          <p class="text-center text-white text-xl font-bold mt-2">$10 / week</p>
+          <ul class="mt-4 space-y-2">
+            <li class="font-semibold">1. 2x score in game</li>
+            <li class="font-semibold">2. 2 withdrawal limit</li>
+            <li class="font-semibold">3. Faster withdrawal</li>
+            <li class="font-semibold">4. 2x bonus</li>
+            <li class="font-semibold">5. Fastest customer support</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="swiper-slide flex justify-center">
+        <div class="w-80 bg-orange-400 rounded-2xl p-6 text-white shadow-lg">
+          <h2 class="text-2xl font-bold text-center">Silver Plan</h2>
+          <p class="text-center text-white text-xl font-bold mt-2">$20 / week</p>
+          <ul class="mt-4 space-y-2">
+            <li class="font-semibold">1. 5x score in game</li>
+            <li class="font-semibold">2. 10 withdrawal limit</li>
+            <li class="font-semibold">3. Faster withdrawal</li>
+            <li class="font-semibold">4. 5x bonus</li>
+            <li class="font-semibold">5. Fastest customer support</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="swiper-slide flex justify-center">
+        <div class="w-80 bg-blue-500 rounded-2xl p-6 text-white shadow-lg">
+          <h2 class="text-2xl font-bold text-center">Gold Plan</h2>
+          <p class="text-center text-white text-xl font-bold mt-2">$50 / month</p>
+          <ul class="mt-4 space-y-2">
+            <li class="font-semibold">1. 10x score in game</li>
+            <li class="font-semibold">2. 100 withdrawal limit</li>
+            <li class="font-semibold">3. Faster withdrawal</li>
+            <li class="font-semibold">4. 10x bonus</li>
+            <li class="font-semibold">5. Fastest customer support</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Slide 4 -->
+      <div class="swiper-slide flex justify-center">
+        <div class="w-80 bg-purple-600 rounded-2xl p-6 text-white shadow-lg">
+          <h2 class="text-2xl font-bold text-center">Platinum Plan</h2>
+          <p class="text-center text-white text-xl font-bold mt-2">$100 / 3 months</p>
+          <ul class="mt-4 space-y-2">
+            <li class="font-semibold">1. 15x score in game</li>
+            <li class="font-semibold">2. 200 withdrawal limit</li>
+            <li class="font-semibold">3. Faster withdrawal</li>
+            <li class="font-semibold">4. 20x bonus</li>
+            <li class="font-semibold">5. Fastest customer support</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Slide 5 -->
+      <div class="swiper-slide flex justify-center">
+        <div class="w-80 bg-gradient-to-br from-gray-700 via-blue-900 to-white rounded-2xl p-6 text-white shadow-lg">
+          <h2 class="text-2xl font-bold text-center">Diamond Plan</h2>
+          <p class="text-center text-white text-xl font-bold mt-2">$200 / week</p>
+          <ul class="mt-4 space-y-2">
+            <li class="font-semibold">1. 20x score in game</li>
+            <li class="font-semibold">2. 1000 withdrawal limit</li>
+            <li class="font-semibold">3. Faster withdrawal</li>
+            <li class="font-semibold">4. 20x bonus</li>
+            <li class="font-semibold">5. Fastest customer support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Navigation -->
+    <div class="flex justify-center space-x-4 mt-4">
+      <button class="swiper-button-prev text-black">⬅️</button>
+      <button class="swiper-button-next text-black">➡️</button>
+    </div>
+  </div>
 
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      loop: true,
+    });
+  </script>
 </body>
 </html>
