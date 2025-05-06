@@ -1,197 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Premium Plans</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f1f3f8;
-    }
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px;
-      background-color: white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-    .navbar-left {
-      display: flex;
-      align-items: center;
-    }
-    .navbar-left button {
-      border: none;
-      background: none;
-      font-size: 20px;
-      margin-right: 10px;
-    }
-    .navbar-right img {
-      width: 30px;
-      border-radius: 50%;
-      margin-left: 15px;
-    }
-    .heading {
-      text-align: center;
-      padding: 20px;
-      font-size: 22px;
-      font-weight: bold;
-    }
-    .swiper-slide {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .card {
-      background: white;
-      border-radius: 20px;
-      width: 300px;
-      padding: 25px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-    .card h2 {
-      margin: 0;
-      font-size: 22px;
-      font-weight: bold;
-    }
-    .card .price {
-      font-size: 24px;
-      margin: 10px 0;
-      color: #333;
-    }
-    .features {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-      margin-top: 20px;
-    }
-    .features li {
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    .btn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #4a90e2;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .bronze { background: linear-gradient(to bottom, #cd7f32, #a0522d); color: white; }
-    .silver { background: linear-gradient(to bottom, #c0c0c0, #a9a9a9); color: white; }
-    .gold { background: linear-gradient(to bottom, #ffd700, #daa520); color: white; }
-    .platinum { background: linear-gradient(to bottom, #e5e4e2, #b0c4de); color: white; }
-    .diamond { background: linear-gradient(to bottom, #b9f2ff, #00bfff); color: white; }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="navbar">
-    <div class="navbar-left">
-      <button>&larr;</button>
-      <span>Premium Plans</span>
-    </div>
-    <div class="navbar-right">
-      <img src="https://img.icons8.com/ios-filled/50/000000/appointment-reminders.png" alt="bell">
-      <img src="https://img.icons8.com/ios-filled/50/000000/user.png" alt="user">
-    </div>
+  <div class="app-container">
+    <header class="navbar">
+      <button class="back-btn">←</button>
+      <h2>Subscription Plan</h2>
+      <div class="nav-icons">
+        <span class="icon">🔔</span>
+        <img src="avatar.png" alt="Avatar" class="avatar" />
+      </div>
+    </header>
+
+    <main class="slider-container">
+      <div class="slide bronze">
+        <h3 class="plan-title">Bronze Plan</h3>
+        <div class="price">₹10 / week</div>
+        <ul class="features">
+          <li><strong>2x</strong> score in game</li>
+          <li><strong>2</strong> withdrawal limit</li>
+          <li><strong>Faster</strong> withdrawal</li>
+          <li><strong>2x</strong> bonus</li>
+          <li><strong>Fastest</strong> customer support</li>
+        </ul>
+        <button class="get-started" data-amount="10">Get Started</button>
+      </div>
+
+      <div class="slide silver">
+        <h3 class="plan-title">Silver Plan</h3>
+        <div class="price">₹20 / week</div>
+        <ul class="features">
+          <li><strong>5x</strong> score in game</li>
+          <li><strong>10</strong> withdrawal limit</li>
+          <li><strong>Faster</strong> withdrawal</li>
+          <li><strong>5x</strong> bonus</li>
+          <li><strong>Fastest</strong> customer support</li>
+        </ul>
+        <button class="get-started" data-amount="20">Get Started</button>
+      </div>
+
+      <div class="slide gold">
+        <h3 class="plan-title">Gold Plan</h3>
+        <div class="price">₹50 / month</div>
+        <ul class="features">
+          <li><strong>10x</strong> score in game</li>
+          <li><strong>100</strong> withdrawal limit</li>
+          <li><strong>Faster</strong> withdrawal</li>
+          <li><strong>10x</strong> bonus</li>
+          <li><strong>Fastest</strong> customer support</li>
+        </ul>
+        <button class="get-started" data-amount="50">Get Started</button>
+      </div>
+
+      <div class="slide platinum">
+        <h3 class="plan-title">Platinum Plan</h3>
+        <div class="price">₹100 / 3 months</div>
+        <ul class="features">
+          <li><strong>15x</strong> score in game</li>
+          <li><strong>200</strong> withdrawal limit</li>
+          <li><strong>Faster</strong> withdrawal</li>
+          <li><strong>20x</strong> bonus</li>
+          <li><strong>Fastest</strong> customer support</li>
+        </ul>
+        <button class="get-started" data-amount="100">Get Started</button>
+      </div>
+
+      <div class="slide diamond">
+        <h3 class="plan-title">Diamond Plan</h3>
+        <div class="price">₹200 / week</div>
+        <ul class="features">
+          <li><strong>20x</strong> score in game</li>
+          <li><strong>1000</strong> withdrawal limit</li>
+          <li><strong>Faster</strong> withdrawal</li>
+          <li><strong>20x</strong> bonus</li>
+          <li><strong>Fastest</strong> customer support</li>
+        </ul>
+        <button class="get-started" data-amount="200">Get Started</button>
+      </div>
+    </main>
   </div>
 
-  <div class="heading">Choose Your Plan</div>
-
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="card bronze">
-          <h2>Bronze</h2>
-          <div class="price">₹10 / Week</div>
-          <ul class="features">
-            <li>2x Score in Game</li>
-            <li>2 Withdrawal Limit</li>
-            <li>Faster Withdrawal</li>
-            <li>2x Bonus</li>
-            <li>Fastest Customer Support</li>
-          </ul>
-          <button class="btn">Get Started</button>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="card silver">
-          <h2>Silver</h2>
-          <div class="price">₹20 / Week</div>
-          <ul class="features">
-            <li>5x Score in Game</li>
-            <li>10 Withdrawal Limit</li>
-            <li>Faster Withdrawal</li>
-            <li>5x Bonus</li>
-            <li>Fastest Customer Support</li>
-          </ul>
-          <button class="btn">Get Started</button>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="card gold">
-          <h2>Gold</h2>
-          <div class="price">₹50 / Month</div>
-          <ul class="features">
-            <li>10x Score in Game</li>
-            <li>100 Withdrawal Limit</li>
-            <li>Faster Withdrawal</li>
-            <li>10x Bonus</li>
-            <li>Fastest Customer Support</li>
-          </ul>
-          <button class="btn">Get Started</button>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="card platinum">
-          <h2>Platinum</h2>
-          <div class="price">₹100 / 3 Months</div>
-          <ul class="features">
-            <li>15x Score in Game</li>
-            <li>200 Withdrawal Limit</li>
-            <li>Faster Withdrawal</li>
-            <li>20x Bonus</li>
-            <li>Fastest Customer Support</li>
-          </ul>
-          <button class="btn">Get Started</button>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="card diamond">
-          <h2>Diamond</h2>
-          <div class="price">₹200 / Week</div>
-          <ul class="features">
-            <li>20x Score in Game</li>
-            <li>1000 Withdrawal Limit</li>
-            <li>Faster Withdrawal</li>
-            <li>20x Bonus</li>
-            <li>Fastest Customer Support</li>
-          </ul>
-          <button class="btn">Get Started</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
