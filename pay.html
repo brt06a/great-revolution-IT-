@@ -2,89 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Premium Plans</title>
-  <link rel="stylesheet" href="pay.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Plan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="app-container">
-    <header class="navbar">
-      <button class="back-btn">←</button>
-      <h2>Subscription Plan</h2>
-      <div class="nav-icons">
-        <span class="icon">🔔</span>
-        <img src="avatar.png" alt="Avatar" class="avatar" />
-      </div>
-    </header>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-    <main class="slider-container">
-      <div class="slide bronze">
-        <h3 class="plan-title">Bronze Plan</h3>
-        <div class="price">₹10 / week</div>
-        <ul class="features">
-          <li><strong>2x</strong> score in game</li>
-          <li><strong>2</strong> withdrawal limit</li>
-          <li><strong>Faster</strong> withdrawal</li>
-          <li><strong>2x</strong> bonus</li>
-          <li><strong>Fastest</strong> customer support</li>
-        </ul>
-        <button class="get-started" data-amount="10">Get Started</button>
+  <div class="bg-white p-6 rounded-2xl shadow-lg w-80">
+    <h2 class="text-xl font-bold text-center">CHOOSE YOUR PLAN</h2>
+    <p class="text-center text-gray-500 text-sm mb-4">
+      Start with <span class="text-red-500">14 days free trial</span>. Upgrade or downgrade anytime
+    </p>
+    <div class="bg-blue-600 text-white rounded-xl p-4 relative">
+      <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+        <span class="bg-yellow-400 rounded-full p-2">👑</span>
       </div>
-
-      <div class="slide silver">
-        <h3 class="plan-title">Silver Plan</h3>
-        <div class="price">₹20 / week</div>
-        <ul class="features">
-          <li><strong>5x</strong> score in game</li>
-          <li><strong>10</strong> withdrawal limit</li>
-          <li><strong>Faster</strong> withdrawal</li>
-          <li><strong>5x</strong> bonus</li>
-          <li><strong>Fastest</strong> customer support</li>
-        </ul>
-        <button class="get-started" data-amount="20">Get Started</button>
+      <div class="text-center mt-4">
+        <p class="text-sm">PREMIUM</p>
+        <p class="text-3xl font-bold">$160 <span class="text-sm font-normal">/ Mon</span></p>
       </div>
-
-      <div class="slide gold">
-        <h3 class="plan-title">Gold Plan</h3>
-        <div class="price">₹50 / month</div>
-        <ul class="features">
-          <li><strong>10x</strong> score in game</li>
-          <li><strong>100</strong> withdrawal limit</li>
-          <li><strong>Faster</strong> withdrawal</li>
-          <li><strong>10x</strong> bonus</li>
-          <li><strong>Fastest</strong> customer support</li>
-        </ul>
-        <button class="get-started" data-amount="50">Get Started</button>
-      </div>
-
-      <div class="slide platinum">
-        <h3 class="plan-title">Platinum Plan</h3>
-        <div class="price">₹100 / 3 months</div>
-        <ul class="features">
-          <li><strong>15x</strong> score in game</li>
-          <li><strong>200</strong> withdrawal limit</li>
-          <li><strong>Faster</strong> withdrawal</li>
-          <li><strong>20x</strong> bonus</li>
-          <li><strong>Fastest</strong> customer support</li>
-        </ul>
-        <button class="get-started" data-amount="100">Get Started</button>
-      </div>
-
-      <div class="slide diamond">
-        <h3 class="plan-title">Diamond Plan</h3>
-        <div class="price">₹200 / week</div>
-        <ul class="features">
-          <li><strong>20x</strong> score in game</li>
-          <li><strong>1000</strong> withdrawal limit</li>
-          <li><strong>Faster</strong> withdrawal</li>
-          <li><strong>20x</strong> bonus</li>
-          <li><strong>Fastest</strong> customer support</li>
-        </ul>
-        <button class="get-started" data-amount="200">Get Started</button>
-      </div>
-    </main>
+      <ul class="mt-4 text-sm">
+        <li class="flex justify-between border-b border-blue-500 py-1">120 GB SSD Disk ✅</li>
+        <li class="flex justify-between border-b border-blue-500 py-1">100 GB Bandwidth ✅</li>
+        <li class="flex justify-between border-b border-blue-500 py-1">250 Emails ✅</li>
+        <li class="flex justify-between border-b border-blue-500 py-1">Unlimited FTP ✅</li>
+        <li class="flex justify-between border-b border-blue-500 py-1">5 Websites ✅</li>
+        <li class="flex justify-between border-b border-blue-500 py-1">CPanel ✅</li>
+        <li class="flex justify-between py-1">SSL Certificate ✅</li>
+      </ul>
+      <button id="payBtn" class="mt-4 bg-white text-blue-700 w-full py-2 rounded-lg font-semibold">
+        Get Started
+      </button>
+    </div>
   </div>
 
-  <script src="pay.js"></script>
+  <!-- Razorpay JS -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    const payBtn = document.getElementById("payBtn");
+    payBtn.onclick = function () {
+      const options = {
+        key: "YOUR_RAZORPAY_KEY_ID", // Replace with your Razorpay Key
+        amount: 16000, // 160 USD in paise (160 * 100)
+        currency: "INR",
+        name: "Your Company",
+        description: "Premium Subscription",
+        handler: function (response) {
+          alert("Payment successful. ID: " + response.razorpay_payment_id);
+        },
+        prefill: {
+          name: "Customer Name",
+          email: "customer@example.com"
+        },
+        theme: {
+          color: "#4F46E5"
+        }
+      };
+      const rzp1 = new Razorpay(options);
+      rzp1.open();
+    };
+  </script>
+
 </body>
 </html>
