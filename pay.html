@@ -1,116 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Premium Plans</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
   <style>
-    .swiper {
-      padding-bottom: 40px;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f3f8;
     }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    .navbar-left {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-left button {
+      border: none;
+      background: none;
+      font-size: 20px;
+      margin-right: 10px;
+    }
+    .navbar-right img {
+      width: 30px;
+      border-radius: 50%;
+      margin-left: 15px;
+    }
+    .heading {
+      text-align: center;
+      padding: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      width: 300px;
+      padding: 25px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .card h2 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .card .price {
+      font-size: 24px;
+      margin: 10px 0;
+      color: #333;
+    }
+    .features {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      margin-top: 20px;
+    }
+    .features li {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .bronze { background: linear-gradient(to bottom, #cd7f32, #a0522d); color: white; }
+    .silver { background: linear-gradient(to bottom, #c0c0c0, #a9a9a9); color: white; }
+    .gold { background: linear-gradient(to bottom, #ffd700, #daa520); color: white; }
+    .platinum { background: linear-gradient(to bottom, #e5e4e2, #b0c4de); color: white; }
+    .diamond { background: linear-gradient(to bottom, #b9f2ff, #00bfff); color: white; }
   </style>
 </head>
-<body class="bg-gray-100 font-sans">
-
-  <!-- Top Navigation Bar -->
-  <div class="flex justify-between items-center p-4 bg-white shadow-md">
-    <button class="text-xl">←</button>
-    <h1 class="text-xl font-bold">Premium Plans</h1>
-    <div class="flex items-center space-x-4">
-      <button>
-        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405M19 13V6a2 2 0 00-2-2H5a2 2 0 00-2 2v13a2 2 0 002 2h11l4-4z"></path></svg>
-      </button>
-      <img src="https://i.pravatar.cc/30" alt="Avatar" class="rounded-full w-8 h-8">
+<body>
+  <div class="navbar">
+    <div class="navbar-left">
+      <button>&larr;</button>
+      <span>Premium Plans</span>
+    </div>
+    <div class="navbar-right">
+      <img src="https://img.icons8.com/ios-filled/50/000000/appointment-reminders.png" alt="bell">
+      <img src="https://img.icons8.com/ios-filled/50/000000/user.png" alt="user">
     </div>
   </div>
 
-  <!-- Swiper Container -->
-  <div class="swiper mySwiper mt-4 px-4">
+  <div class="heading">Choose Your Plan</div>
+
+  <div class="swiper">
     <div class="swiper-wrapper">
-      <!-- Slide 1 -->
       <div class="swiper-slide">
-        <div class="bg-yellow-500 rounded-2xl p-6 text-white shadow-lg">
-          <h2 class="text-center text-2xl font-bold">Bronze Plan</h2>
-          <p class="text-center text-xl font-semibold">$10 / week</p>
-          <ul class="mt-4 space-y-2">
-            <li class="font-bold">1. 2x score in game</li>
-            <li class="font-bold">2. 2 withdrawal limit</li>
-            <li class="font-bold">3. Faster withdrawal</li>
-            <li class="font-bold">4. 2x bonus</li>
-            <li class="font-bold">5. Fastest customer support</li>
+        <div class="card bronze">
+          <h2>Bronze</h2>
+          <div class="price">₹10 / Week</div>
+          <ul class="features">
+            <li>2x Score in Game</li>
+            <li>2 Withdrawal Limit</li>
+            <li>Faster Withdrawal</li>
+            <li>2x Bonus</li>
+            <li>Fastest Customer Support</li>
           </ul>
+          <button class="btn">Get Started</button>
         </div>
       </div>
-      <!-- Slide 2 -->
       <div class="swiper-slide">
-        <div class="bg-orange-500 rounded-2xl p-6 text-white shadow-lg">
-          <h2 class="text-center text-2xl font-bold">Silver Plan</h2>
-          <p class="text-center text-xl font-semibold">$20 / week</p>
-          <ul class="mt-4 space-y-2">
-            <li class="font-bold">1. 5x score in game</li>
-            <li class="font-bold">2. 10 withdrawal limit</li>
-            <li class="font-bold">3. Faster withdrawal</li>
-            <li class="font-bold">4. 5x bonus</li>
-            <li class="font-bold">5. Fastest customer support</li>
+        <div class="card silver">
+          <h2>Silver</h2>
+          <div class="price">₹20 / Week</div>
+          <ul class="features">
+            <li>5x Score in Game</li>
+            <li>10 Withdrawal Limit</li>
+            <li>Faster Withdrawal</li>
+            <li>5x Bonus</li>
+            <li>Fastest Customer Support</li>
           </ul>
+          <button class="btn">Get Started</button>
         </div>
       </div>
-      <!-- Slide 3 -->
       <div class="swiper-slide">
-        <div class="bg-yellow-700 rounded-2xl p-6 text-white shadow-lg">
-          <h2 class="text-center text-2xl font-bold">Gold Plan</h2>
-          <p class="text-center text-xl font-semibold">$50 / month</p>
-          <ul class="mt-4 space-y-2">
-            <li class="font-bold">1. 10x score in game</li>
-            <li class="font-bold">2. 100 withdrawal limit</li>
-            <li class="font-bold">3. Faster withdrawal</li>
-            <li class="font-bold">4. 10x bonus</li>
-            <li class="font-bold">5. Fastest customer support</li>
+        <div class="card gold">
+          <h2>Gold</h2>
+          <div class="price">₹50 / Month</div>
+          <ul class="features">
+            <li>10x Score in Game</li>
+            <li>100 Withdrawal Limit</li>
+            <li>Faster Withdrawal</li>
+            <li>10x Bonus</li>
+            <li>Fastest Customer Support</li>
           </ul>
+          <button class="btn">Get Started</button>
         </div>
       </div>
-      <!-- Slide 4 -->
       <div class="swiper-slide">
-        <div class="bg-purple-700 rounded-2xl p-6 text-white shadow-lg">
-          <h2 class="text-center text-2xl font-bold">Platinum Plan</h2>
-          <p class="text-center text-xl font-semibold">$100 / 3 months</p>
-          <ul class="mt-4 space-y-2">
-            <li class="font-bold">1. 15x score in game</li>
-            <li class="font-bold">2. 200 withdrawal limit</li>
-            <li class="font-bold">3. Faster withdrawal</li>
-            <li class="font-bold">4. 20x bonus</li>
-            <li class="font-bold">5. Fastest customer support</li>
+        <div class="card platinum">
+          <h2>Platinum</h2>
+          <div class="price">₹100 / 3 Months</div>
+          <ul class="features">
+            <li>15x Score in Game</li>
+            <li>200 Withdrawal Limit</li>
+            <li>Faster Withdrawal</li>
+            <li>20x Bonus</li>
+            <li>Fastest Customer Support</li>
           </ul>
+          <button class="btn">Get Started</button>
         </div>
       </div>
-      <!-- Slide 5 -->
       <div class="swiper-slide">
-        <div class="bg-gradient-to-br from-blue-900 to-white rounded-2xl p-6 text-white shadow-lg">
-          <h2 class="text-center text-2xl font-bold">Diamond Plan</h2>
-          <p class="text-center text-xl font-semibold">$200 / week</p>
-          <ul class="mt-4 space-y-2">
-            <li class="font-bold">1. 20x score in game</li>
-            <li class="font-bold">2. 1000 withdrawal limit</li>
-            <li class="font-bold">3. Faster withdrawal</li>
-            <li class="font-bold">4. 20x bonus</li>
-            <li class="font-bold">5. Fastest customer support</li>
+        <div class="card diamond">
+          <h2>Diamond</h2>
+          <div class="price">₹200 / Week</div>
+          <ul class="features">
+            <li>20x Score in Game</li>
+            <li>1000 Withdrawal Limit</li>
+            <li>Faster Withdrawal</li>
+            <li>20x Bonus</li>
+            <li>Fastest Customer Support</li>
           </ul>
+          <button class="btn">Get Started</button>
         </div>
       </div>
     </div>
-    <!-- Pagination -->
-    <div class="swiper-pagination mt-4"></div>
   </div>
 
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script>
-    const swiper = new Swiper(".mySwiper", {
+    const swiper = new Swiper('.swiper', {
       slidesPerView: 1,
-      spaceBetween: 20,
+      spaceBetween: 30,
+      loop: true,
       pagination: {
-        el: ".swiper-pagination",
+        el: '.swiper-pagination',
         clickable: true,
       },
     });
