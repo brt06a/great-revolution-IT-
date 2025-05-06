@@ -3,65 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Premium Plan</title>
+  <title>Premium Plans</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .scroll-snap {
+      scroll-snap-type: x mandatory;
+      overflow-x: scroll;
+      display: flex;
+    }
+    .snap-item {
+      scroll-snap-align: center;
+      flex-shrink: 0;
+      width: 100%;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-
-  <div class="bg-white p-6 rounded-2xl shadow-lg w-80">
-    <h2 class="text-xl font-bold text-center">CHOOSE YOUR PLAN</h2>
-    <p class="text-center text-gray-500 text-sm mb-4">
-      Start with <span class="text-red-500">14 days free trial</span>. Upgrade or downgrade anytime
-    </p>
-    <div class="bg-blue-600 text-white rounded-xl p-4 relative">
-      <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
-        <span class="bg-yellow-400 rounded-full p-2">👑</span>
-      </div>
-      <div class="text-center mt-4">
-        <p class="text-sm">PREMIUM</p>
-        <p class="text-3xl font-bold">$160 <span class="text-sm font-normal">/ Mon</span></p>
-      </div>
-      <ul class="mt-4 text-sm">
-        <li class="flex justify-between border-b border-blue-500 py-1">120 GB SSD Disk ✅</li>
-        <li class="flex justify-between border-b border-blue-500 py-1">100 GB Bandwidth ✅</li>
-        <li class="flex justify-between border-b border-blue-500 py-1">250 Emails ✅</li>
-        <li class="flex justify-between border-b border-blue-500 py-1">Unlimited FTP ✅</li>
-        <li class="flex justify-between border-b border-blue-500 py-1">5 Websites ✅</li>
-        <li class="flex justify-between border-b border-blue-500 py-1">CPanel ✅</li>
-        <li class="flex justify-between py-1">SSL Certificate ✅</li>
-      </ul>
-      <button id="payBtn" class="mt-4 bg-white text-blue-700 w-full py-2 rounded-lg font-semibold">
-        Get Started
-      </button>
+<body class="bg-gray-100 min-h-screen">
+  <!-- Header -->
+  <div class="flex justify-between items-center px-4 py-3 bg-white shadow-md">
+    <button class="text-2xl font-bold">←</button>
+    <h1 class="text-lg font-bold">Premium Plans</h1>
+    <div class="flex items-center gap-3">
+      <span class="text-xl">🔔</span>
+      <img src="https://i.pravatar.cc/40" alt="avatar" class="w-8 h-8 rounded-full">
     </div>
   </div>
 
-  <!-- Razorpay JS -->
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  <script>
-    const payBtn = document.getElementById("payBtn");
-    payBtn.onclick = function () {
-      const options = {
-        key: "rzp_live_6NEMkMwtW0VXWs", // Replace with your Razorpay Key
-        amount: 16000, // 160 USD in paise (160 * 100)
-        currency: "INR",
-        name: "Your Company",
-        description: "Premium Subscription",
-        handler: function (response) {
-          alert("Payment successful. ID: " + response.razorpay_payment_id);
-        },
-        prefill: {
-          name: "Customer Name",
-          email: "customer@example.com"
-        },
-        theme: {
-          color: "#4F46E5"
-        }
-      };
-      const rzp1 = new Razorpay(options);
-      rzp1.open();
-    };
-  </script>
+  <!-- Slider -->
+  <div class="scroll-snap mt-4">
+    <!-- Plan 1 -->
+    <div class="snap-item bg-yellow-300 text-white p-6 m-2 rounded-2xl shadow-xl">
+      <h2 class="text-xl font-bold text-center">Bronze Plan</h2>
+      <p class="text-center text-lg font-semibold">₹10 / Week</p>
+      <ul class="mt-4 font-bold space-y-2">
+        <li>✅ 2x Score in Game</li>
+        <li>✅ 2 Withdrawal Limit</li>
+        <li>✅ Faster Withdrawal</li>
+        <li>✅ 2x Bonus</li>
+        <li>✅ Fastest Customer Support</li>
+      </ul>
+      <button class="mt-4 bg-white text-black font-semibold w-full py-2 rounded-lg">Get Started</button>
+    </div>
 
+    <!-- Plan 2 -->
+    <div class="snap-item bg-gray-400 text-white p-6 m-2 rounded-2xl shadow-xl">
+      <h2 class="text-xl font-bold text-center">Silver Plan</h2>
+      <p class="text-center text-lg font-semibold">₹20 / Week</p>
+      <ul class="mt-4 font-bold space-y-2">
+        <li>✅ 5x Score in Game</li>
+        <li>✅ 10 Withdrawal Limit</li>
+        <li>✅ Faster Withdrawal</li>
+        <li>✅ 5x Bonus</li>
+        <li>✅ Fastest Customer Support</li>
+      </ul>
+      <button class="mt-4 bg-white text-black font-semibold w-full py-2 rounded-lg">Get Started</button>
+    </div>
+
+    <!-- Plan 3 -->
+    <div class="snap-item bg-yellow-500 text-white p-6 m-2 rounded-2xl shadow-xl">
+      <h2 class="text-xl font-bold text-center">Gold Plan</h2>
+      <p class="text-center text-lg font-semibold">₹50 / Month</p>
+      <ul class="mt-4 font-bold space-y-2">
+        <li>✅ 10x Score in Game</li>
+        <li>✅ 100 Withdrawal Limit</li>
+        <li>✅ Faster Withdrawal</li>
+        <li>✅ 10x Bonus</li>
+        <li>✅ Fastest Customer Support</li>
+      </ul>
+      <button class="mt-4 bg-white text-black font-semibold w-full py-2 rounded-lg">Get Started</button>
+    </div>
+
+    <!-- Plan 4 -->
+    <div class="snap-item bg-purple-400 text-white p-6 m-2 rounded-2xl shadow-xl">
+      <h2 class="text-xl font-bold text-center">Platinum Plan</h2>
+      <p class="text-center text-lg font-semibold">₹100 / 3 Months</p>
+      <ul class="mt-4 font-bold space-y-2">
+        <li>✅ 15x Score in Game</li>
+        <li>✅ 200 Withdrawal Limit</li>
+        <li>✅ Faster Withdrawal</li>
+        <li>✅ 20x Bonus</li>
+        <li>✅ Fastest Customer Support</li>
+      </ul>
+      <button class="mt-4 bg-white text-black font-semibold w-full py-2 rounded-lg">Get Started</button>
+    </div>
+
+    <!-- Plan 5 -->
+    <div class="snap-item bg-blue-400 text-white p-6 m-2 rounded-2xl shadow-xl">
+      <h2 class="text-xl font-bold text-center">Diamond Plan</h2>
+      <p class="text-center text-lg font-semibold">₹200 / Week</p>
+      <ul class="mt-4 font-bold space-y-2">
+        <li>✅ 20x Score in Game</li>
+        <li>✅ 1000 Withdrawal Limit</li>
+        <li>✅ Faster Withdrawal</li>
+        <li>✅ 20x Bonus</li>
+        <li>✅ Fastest Customer Support</li>
+      </ul>
+      <button class="mt-4 bg-white text-black font-semibold w-full py-2 rounded-lg">Get Started</button>
+    </div>
+  </div>
 </body>
 </html>
